@@ -1,27 +1,27 @@
 {
-  "name": "xbbcode-parser",
+  "name": "pokecommunity-bbcode",
   "version": "0.1.2",
-  "description": "Allows you to parse BBCode and to extend the markup to add your own tags.",
-  "main": "xbbcode.js",
-  "directories": {
-    "example": "examples"
-  },
+  "description": "Extends xbbcode-parser with tags used on `https://pokecommunity.com` and a class-based syntax for tag definitions.",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/patorjk/Extendible-BBCode-Parser.git"
+    "url": "https://github.com/tipsypastels/pokecommunity-bbcode"
   },
   "keywords": [
     "bbcode",
     "xbbcode",
     "parser"
   ],
-  "author": "Patrick Gillespie",
+  "author": "Dakota Sankey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patorjk/Extendible-BBCode-Parser/issues"
+    "url": "https://github.com/tipsypastels/pokecommunity-bbcode/issues"
   },
-  "homepage": "https://github.com/patorjk/Extendible-BBCode-Parser"
+  "homepage": "https://github.com/tipsypastels/pokecommunity-bbcode",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
