@@ -4,13 +4,11 @@ Code heavily based on [patorjk/Extendible-BBCode-Parser](https://github.com/pato
 
 ## How to add tags
 
-Create a file in `lib/tags` for your tag class. A basic file will look something like this.
+Create a file in `lib/tags` for your tag function. A basic file will look something like this.
 
 ```javascript
-class BTag {
-  render({ content }) {
-    return `<strong>${content}</strong>`;
-  }
+const BTag = ({ content }) => {
+  return `<strong>${content}</strong>`;
 }
 
 module.exports = {
@@ -36,12 +34,7 @@ Before exporting your tag, you can define the following static properties to ena
 An example:
 
 ```javascript
-class NoParseTag {
-  render({ content }) {
-    return content;
-  }
-}
-
+const NoParseTag = ({ content }) => content;
 NoParseTag.noParse = true;
 
 module.exports = {
