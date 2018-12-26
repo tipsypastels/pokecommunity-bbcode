@@ -7,22 +7,23 @@ Code heavily based on [patorjk/Extendible-BBCode-Parser](https://github.com/pato
 Create a file in `lib/tags` for your tag class. A basic file will look something like this.
 
 ```javascript
-const { Tag, registerTag } = require('../index');
-
-class BTag extends Tag {
+class BTag {
   render({ content }) {
     return `<strong>${content}</strong>`;
   }
 }
 
-registerTag('b', BTag);
+module.exports = {
+  name: 'b',
+  tag: BTag,
+};
 ```
 
 The render function is passed an object of the form `{ params, content }`.
 
 ## Tag settings
 
-Before registering your tag, you can use the `setContext` static method to define some special properties. Those are.
+Before exporting your tag, you can define the following static properties to enable special settings.
 
 - restrictChildrenTo - A list of BBCode tags which are allowed to be nested within this BBCode tag. If this property is omitted, any BBCode tag may be nested within the tag.
 
@@ -33,14 +34,16 @@ Before registering your tag, you can use the `setContext` static method to defin
 An example:
 
 ```javascript
-const { Tag, registerTag } = require('./index');
-
-class NoParseTag extends Tag {
+class NoParseTag {
+  render({ content }) {
+    return content;
+  }
 }
 
-NoParseTag.setContext({
-  noParse: true,
-});
+NoParseTag.noParse = true;
 
-registerTag('noparse', NoParseTag);
+module.exports = {
+  name: 'noparse',
+  tag: NoParseTag,
+};
 ```
