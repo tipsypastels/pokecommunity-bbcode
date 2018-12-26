@@ -1,19 +1,24 @@
 const { process } = require('../lib/index');
 
-function expectBB(bbcode, html) {
-  return expect(process({ text: bbcode }).html).toBe(html);
+function tagTest(name, { bbcode, html }) {
+  return test(name, () => {
+    return expect(process({ text: bbcode }).html).toBe(html);
+  });
 }
 
-test('[b]', () => {
-  let bbcode = '[b]hello[/b]';
-  let html   = '<strong>hello</strong>';
-  
-  expectBB(bbcode, html);
+tagTest('b', {
+  bbcode: '[b]hello[/b]', 
+  html: '<strong>hello</strong>',
 });
 
-test('[bbcode]', () => {
-  let bbcode = '[bbcode]yo[/bbcode]';
-  let html   = 'yo';
+tagTest('bbcode', {
+  bbcode: '[bbcode]yo[/bbcode]',
+  html: 'yo',
+});
 
-  expectBB(bbcode, html);
-})
+// TODO these are the correct characters but uh
+// not sure why we get the output like this :/
+tagTest('noparse', {
+  bbcode: '[noparse][b]yo[/b][/noparse]',
+  html: '[b]yo&#91;/b&#93;',
+});
