@@ -16,6 +16,21 @@ tagTest('bbcode', {
   html: 'yo',
 });
 
+tagTest('color (hex with hash)', {
+  bbcode: '[color=#ff0000]red[/color]',
+  html: '<span style="color: #ff0000;">red</span>',
+});
+
+tagTest('color (hex no hash)', {
+  bbcode: '[color=ff0000]red[/color]',
+  html: '<span style="color: #ff0000;">red</span>',
+});
+
+tagTest('color (word)', {
+  bbcode: '[color=red]red[/color]',
+  html: '<span style="color: red;">red</span>',
+});
+
 tagTest('i', {
   bbcode: '[i]hello[/i]',
   html: '<em>hello</em>',
@@ -31,9 +46,19 @@ tagTest('fa (with param)', {
   html: '<i class="fab fa-twitter"></i>',
 });
 
+tagTest('font', {
+  bbcode: '[font=courier]robot[/font]',
+  html: '<span style="font-family: courier;">robot</span>',
+})
+
 // TODO these are the correct characters but uh
 // not sure why we get the output like this :/
 tagTest('noparse', {
   bbcode: '[noparse][b]yo[/b][/noparse]',
   html: '[b]yo&#91;/b&#93;',
 });
+
+tagTest('size', {
+  bbcode: '[size=2]BIG[/size]',
+  html: '<font size="+2">BIG</font>',
+})
