@@ -36,6 +36,16 @@ tagTest('i', {
   html: '<em>hello</em>',
 });
 
+tagTest('img (real url)', {
+  bbcode: '[img]https://example.com/img.png[/img]',
+  html: '<img src="https://example.com/img.png" />',
+});
+
+tagTest('img (fake url)', {
+  bbcode: '[img]hello[/img]',
+  html: '<img src="" />',
+});
+
 tagTest('fa (no param)', {
   bbcode: '[fa]gifts[/fa]',
   html: '<i class="fas fa-gifts"></i>',
