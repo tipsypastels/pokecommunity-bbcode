@@ -21,6 +21,8 @@ module.exports = {
 
 The render function is passed an object of the form `{ params, content }`.
 
+**Please add tests for your new tag! See the `tests` folder!**
+
 ## Tag settings
 
 Before exporting your tag, you can define the following static properties to enable special settings.
