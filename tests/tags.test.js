@@ -67,6 +67,21 @@ tagTest('noparse', {
   html: '[b]yo&#91;/b&#93;',
 });
 
+tagTest('progress (set value)', {
+  bbcode: '[progress=2]A bar[/progress]',
+  html: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemin="100" style="width: 2%;">A bar</div></div>',
+});
+
+tagTest('progress (no value)', {
+  bbcode: '[progress]A bar[/progress]',
+  html: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemin="100" style="width: 0%;">A bar</div></div>',
+});
+
+tagTest('s', {
+  bbcode: '[s]strike[/s]',
+  html: '<span style="text-decoration: line-through;">strike</span>',
+});
+
 tagTest('size', {
   bbcode: '[size=2]BIG[/size]',
   html: '<font size="+2">BIG</font>',
