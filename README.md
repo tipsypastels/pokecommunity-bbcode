@@ -36,9 +36,6 @@ An example:
 const { Tag, registerTag } = require('./index');
 
 class NoParseTag extends Tag {
-  render({ content }) {
-    return content;
-  }
 }
 
 NoParseTag.setContext({
