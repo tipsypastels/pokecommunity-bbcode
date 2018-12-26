@@ -1,10 +1,4 @@
-const { process } = require('../lib/index');
-
-function tagTest(name, { bbcode, html }) {
-  return test(name, () => {
-    return expect(process({ text: bbcode }).html).toBe(html);
-  });
-}
+const tagTest = require('./testHelper');
 
 tagTest('b', {
   bbcode: '[b]hello[/b]', 
