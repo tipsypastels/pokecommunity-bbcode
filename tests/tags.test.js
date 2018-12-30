@@ -86,3 +86,8 @@ tagTest('size', {
   bbcode: '[size=2]BIG[/size]',
   html: '<font size="+2">BIG</font>',
 })
+
+tagTest('url', {
+  bbcode: '[url="https://example.com"]x[/url]',
+  html: '<a href="https://example.com">x</a>',
+});
