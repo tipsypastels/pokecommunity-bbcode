@@ -6,8 +6,6 @@ XBBCODE.addHook('b', () => {
   someValue = 1;
 });
 
-console.log(Object.keys(XBBCODE.tags));
-
 // called for side effects
 XBBCODE.process({ text: '[b]yo[/b]' });
 
