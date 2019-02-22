@@ -12,3 +12,5 @@ usergroupTestAll(
 
 // can't auto test, different class name
 usergroupTest('smt', 'pr');
+usergroupTest('crystaltier', 't3');
+usergroupTest('platinumtier', 't4');
