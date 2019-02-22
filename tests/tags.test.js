@@ -10,6 +10,21 @@ tagTest('bbcode', {
   html: 'yo',
 });
 
+tagTest('center', {
+  bbcode: '[center]of attention[/center]',
+  html: '<span style="text-align: center">of attention</span>',
+});
+
+tagTest('code (set language)', {
+  bbcode: '[code=ruby]puts "yo!"[/code]',
+  html: '<pre><code class="ruby">puts "yo!"</code></pre>',
+});
+
+tagTest('code (unset language)', {
+  bbcode: '[code]die("PHP bad");[/code]',
+  html: '<pre><code>die("PHP bad");</code></pre>',
+});
+
 tagTest('color (hex with hash)', {
   bbcode: '[color=#ff0000]red[/color]',
   html: '<span style="color: #ff0000;">red</span>',
@@ -25,6 +40,11 @@ tagTest('color (word)', {
   html: '<span style="color: red;">red</span>',
 });
 
+tagTest('highlight', {
+  bbcode: '[highlight]highlight me[/highlight]',
+  html: '<span class="highlight">highlight me</span>',
+});
+
 tagTest('i', {
   bbcode: '[i]hello[/i]',
   html: '<em>hello</em>',
@@ -38,6 +58,11 @@ tagTest('img (real url)', {
 tagTest('img (fake url)', {
   bbcode: '[img]hello[/img]',
   html: '<img src="" />',
+});
+
+tagTest('indent', {
+  bbcode: '[indent]me[/indent]',
+  html: '<blockquote>me</blockquote>',
 });
 
 tagTest('fa (no param)', {
