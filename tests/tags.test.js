@@ -1,4 +1,11 @@
-const tagTest = require('./testHelper');
+/*
+ * Before adding tests, check to see if there are any more specific
+ * test files for this particular use case. For example, usergroup tags
+ * have a seperate file with their own test helper.
+ * 
+ */
+
+const { tagTest } = require('./testHelper');
 
 tagTest('b', {
   bbcode: '[b]hello[/b]', 
@@ -79,11 +86,6 @@ tagTest('font', {
   bbcode: '[font=courier]robot[/font]',
   html: '<span style="font-family: courier;">robot</span>',
 })
-
-tagTest('mod', {
-  bbcode: '[mod]a moderator![/mod]',
-  html: '<span class="usergroup usergroup-mod">a moderator!</span>',
-});
 
 // TODO these are the correct characters but uh
 // not sure why we get the output like this :/
