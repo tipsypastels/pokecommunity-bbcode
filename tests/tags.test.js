@@ -119,6 +119,11 @@ tagTest('noparse', {
   html: '[b]yo&#91;/b&#93;',
 });
 
+tagTest('pclogo', {
+  bbcode: '[pclogo]*[/pclogo]',
+  html: '<i class="icon-pokecommunity"></i>',
+});
+
 tagTest('progress (set value)', {
   bbcode: '[progress=2]A bar[/progress]',
   html: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemin="100" style="width: 2%;">A bar</div></div>',
