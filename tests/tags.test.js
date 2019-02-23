@@ -22,6 +22,21 @@ tagTest('center', {
   html: '<span style="text-align: center">of attention</span>',
 });
 
+tagTest('cimg (real url)', {
+  bbcode: '[cimg="width: 100%"]https://example.com/img.png[/cimg]',
+  html: '<img style="width: 100%" src="https://example.com/img.png" />',
+});
+
+tagTest('cimg (fake url)', {
+  bbcode: '[cimg=width: 100%]hello[/cimg]',
+  html: '<img style="width: 100%" src="" />',
+})
+
+tagTest('class', {
+  bbcode: '[class=red-text]red![/class]',
+  html: '<div class="red-text">red!</div>',
+})
+
 tagTest('code (set language)', {
   bbcode: '[code=ruby]puts "yo!"[/code]',
   html: '<pre><code class="ruby">puts "yo!"</code></pre>',
@@ -47,6 +62,11 @@ tagTest('color (word)', {
   html: '<span style="color: red;">red</span>',
 });
 
+tagTest('div', {
+  bbcode: '[div="color: red"]red![/div]',
+  html: '<div style="color: red">red!</div>',
+});
+
 tagTest('highlight', {
   bbcode: '[highlight]highlight me[/highlight]',
   html: '<span class="highlight">highlight me</span>',
@@ -55,6 +75,11 @@ tagTest('highlight', {
 tagTest('i', {
   bbcode: '[i]hello[/i]',
   html: '<em>hello</em>',
+});
+
+tagTest('iclass', {
+  bbcode: '[iclass=red-text]red![/iclass]',
+  html: '<span class="red-text">red!</span>',
 });
 
 tagTest('img (real url)', {
@@ -112,7 +137,12 @@ tagTest('s', {
 tagTest('size', {
   bbcode: '[size=2]BIG[/size]',
   html: '<font size="+2">BIG</font>',
-})
+});
+
+tagTest('span', {
+  bbcode: '[span="color: red"]red![/span]',
+  html: '<span style="color: red">red!</span>',
+});
 
 tagTest('url', {
   bbcode: '[url="https://example.com"]x[/url]',
