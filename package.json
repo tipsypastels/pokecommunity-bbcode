@@ -4,8 +4,7 @@
   "description": "Extends xbbcode-parser with tags used on `https://pokecommunity.com` and a class-based syntax for tag definitions.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
-    "new": "node lib/generator.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
